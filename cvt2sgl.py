@@ -7,6 +7,9 @@ path = os.getcwd() # get the current directory path
 _, dirs, _ = next(os.walk(path)) # get the list of subdirectories only from the current directory
 
 for dir in dirs:
+    if dir[0] == '.' :
+        continue
+
     subfolder_path = os.path.join(path, dir)
     configFN = os.path.join(subfolder_path, "config.json")
     weightFN = os.path.join(subfolder_path, "weights.npy")
